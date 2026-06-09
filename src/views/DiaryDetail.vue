@@ -187,6 +187,10 @@ function goToPipelineEditor() {
   router.push(`/pipeline/${diaryId.value}`)
 }
 
+function goToRepairLab() {
+  router.push(`/repair-lab/${diaryId.value}`)
+}
+
 function goBack() {
   router.back()
 }
@@ -255,6 +259,12 @@ function formatTime(offset: number): string {
           @click="handleRewind"
         >
           ⏪ 回退
+        </button>
+        <button
+          class="btn-pixel text-purple-400 border-purple-400 text-sm"
+          @click="goToRepairLab"
+        >
+          🔬 修复实验室
         </button>
         <button
           class="btn-pixel text-diary-gold border-diary-gold text-sm"

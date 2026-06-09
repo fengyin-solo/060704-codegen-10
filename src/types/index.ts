@@ -236,3 +236,37 @@ export const TIME_PERIOD_NAMES: Record<TimePeriod, string> = {
   [TimePeriod.YEAR]: '年度珍藏',
   [TimePeriod.ALL]: '全部时光'
 }
+
+export interface SelectedItem {
+  itemId: string
+  count: number
+}
+
+export interface ItemEffectPreview {
+  itemId: string
+  itemName: string
+  itemIcon: string
+  description: string
+  willApply: boolean
+  effectiveness: number
+  fromState: DiaryState
+  toState: DiaryState
+  stateChange: number
+  createdAtChange: number
+  pipelineReset: boolean
+}
+
+export interface RepairLabPreview {
+  originalDiary: Diary
+  previewDiary: Diary
+  originalDecayLevel: number
+  previewDecayLevel: number
+  originalStateName: string
+  previewStateName: string
+  selectedItems: SelectedItem[]
+  itemEffects: ItemEffectPreview[]
+  totalStateChange: number
+  totalCreatedAtChange: number
+  canApply: boolean
+  insufficientItems: string[]
+}
